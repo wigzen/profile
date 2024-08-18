@@ -5,6 +5,7 @@ import Search from "./Search";
 import { Link } from "react-router-dom";
 import OpenCart from "../cart/OpenCart";
 import { useCart } from "../../../context/CartContext";
+import { Menu } from "../../../types/main";
 
 export function Navbar() {
   const { state } = useCart();
@@ -37,7 +38,7 @@ export function Navbar() {
           </Link>
           {menu.length ? (
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
-              {menu.map((item: any) => (
+              {menu.map((item: Menu) => (
                 <li key={item.title}>
                   <Link
                     to={item.path}

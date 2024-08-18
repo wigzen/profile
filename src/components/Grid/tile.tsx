@@ -10,7 +10,7 @@ export function GridTileImage({
   active?: boolean;
   label?: {
     title: string;
-    amount: string;
+    amount: string | number;
     currencyCode: string;
     position?: "bottom" | "center";
   };
@@ -35,16 +35,7 @@ export function GridTileImage({
             })}
             {...props}
           />
-          <p>Viaks </p>
         </div>
-      ) : null}
-      {label ? (
-        <p>
-          <span className="sr-only">{label.title}</span>
-          {label.amount} {label.currencyCode}
-          {label.position === "center" ? " " : null}
-          <span className="sr-only">{label.position}</span>
-        </p>
       ) : null}
     </div>
   );

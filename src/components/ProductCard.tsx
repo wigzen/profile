@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+    <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white  dark:border-neutral-800 hover:border-blue-600">
       <div className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">
         <img className="object-cover" src={product.image} alt="product image" />
         <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="mt-4 px-5 pb-5">
         <h5
-          className="text-xl tracking-tight text-slate-900 truncate "
+          className="text-xl tracking-tight text-slate-600 truncate "
           title={product.title}
         >
           {product.title}
@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
 
         <div className="mt-2 mb-5 flex items-center justify-between">
           <p>
-            <span className="text-3xl font-bold text-slate-900">
+            <span className="text-2xl font-semibold text-slate-900">
               ${product.price}
             </span>
             {/* <span className="text-sm text-slate-900 line-through">
@@ -59,7 +59,7 @@ const ProductCard = ({ product }) => {
         </div>
         <div
           onClick={addToCart}
-          className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          className="flex items-center justify-center rounded-md border border-slate-900 px-5 py-2.5 text-center text-sm font-medium text-slate-900 hover:text-white hover:bg-gray-700 "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ const ProductCard = ({ product }) => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
           >
             <path
               stroke-linecap="round"

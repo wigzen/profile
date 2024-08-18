@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { GridTileImage } from "../Grid/tile";
+import { Product } from "../../types/main";
 
 function ThreeItemGridItem({
   item,
   size,
 }: {
-  item: any;
+  item: Product;
   size: "full" | "half";
   priority?: boolean;
 }) {
@@ -31,9 +32,9 @@ function ThreeItemGridItem({
           alt={item.title}
           label={{
             position: size === "full" ? "center" : "bottom",
-            title: item.title as string,
+            title: item.title,
             amount: item.price,
-            currencyCode: item.currencyCode ?? "",
+            currencyCode: "USD",
           }}
         />
       </Link>
@@ -41,7 +42,7 @@ function ThreeItemGridItem({
   );
 }
 
-export function ThreeItemGrid(props: any) {
+export function ThreeItemGrid(props: { data: Product[] }) {
   // Collections that start with `hidden-*` are hidden from the search page.
   const homepageItems = props.data;
   console.log(homepageItems);

@@ -8,8 +8,9 @@ import { Fragment, Suspense, useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Search, { SearchSkeleton } from "./Search";
 import { Link } from "react-router-dom";
+import { Menu } from "../../../types/main";
 
-export default function MobileMenu({ menu }: { menu: any[] }) {
+export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
@@ -76,7 +77,7 @@ export default function MobileMenu({ menu }: { menu: any[] }) {
                 </div>
                 {menu.length ? (
                   <ul className="flex w-full flex-col">
-                    {menu.map((item: any) => (
+                    {menu.map((item: Menu) => (
                       <li
                         className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"
                         key={item.title}
