@@ -19,8 +19,6 @@ const CartPage = () => {
     });
   };
 
-  console.log(state.cart);
-
   return (
     <>
       <div className="container mx-auto mt-10">
